@@ -7,10 +7,10 @@ namespace lesson11
 {
     public class Card
     {
-        private Faces _face;
+        private Face _face;
         private Suit _suit;
 
-        public Faces Faces
+        public Face Face
         {
             get
             {
@@ -43,9 +43,9 @@ namespace lesson11
         /// </summary>
         /// <param name="face"></param>
         /// <param name="suit"></param>
-        public Card(Faces face, Suit suit)
+        public Card(Face face, Suit suit)
         {
-            this.Faces = face;
+            this.Face = face;
             this.Suit = suit;
         }
 
@@ -53,5 +53,12 @@ namespace lesson11
         // PRIVATE METHODS
 
         // PUBLIC METHODS
+        /// <summary>
+        /// Returns a copy (clone) of the current card
+        /// </summary>
+        public object Clone()
+        {
+            return new Card(this.Face, this.Suit);
+        }
     }
 }

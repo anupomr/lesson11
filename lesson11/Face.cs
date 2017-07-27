@@ -5,12 +5,12 @@ using System.Text;
 /*
 Name: Anupom
 date: july 25
- Description: Enumeration for Faces
+ Description: Enumeration for Face
  * Version: 0.1 - Created the Face Enum
  */
 namespace lesson11
 {
-    public enum Faces
+    public enum Face
     {
         Ace =1,
         Two,

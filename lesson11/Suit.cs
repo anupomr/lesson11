@@ -15,6 +15,6 @@ namespace lesson11
         Clubs,
         Dimonds,
         Hearts,
-        Spreads
+        Spades
     }
 }

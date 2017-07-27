@@ -10,33 +10,101 @@ date: july 25
  */
 namespace lesson11
 {
-    public class Deck:List<Card>
+    public class Deck : CardList
     {
+        // PRIVATE INSTANCE VARIABLES
+        private Random _random;
 
+        // PRIVATE PROPERTIES
+        private Random Random
+        {
+            get
+            {
+                return this._random;
+            }
+
+        }
+
+        // PUBLIC PROPERTIES
+
+        // CONSTRUCTORS
+
+        /// <summary>
+        /// This is the main constructor for the Deck class.
+        /// </summary>
         public Deck()
         {
             this._initialize();
         }
-        private void _initialize()
+
+        // PRIVATE METHODS
+
+        /// <summary>
+        /// This is the private _initialize method that loads the deck with 52 cards.
+        /// This method also initializes other class variables
+        /// </summary>
+        protected override void _initialize()
         {
-            for (int suit = 0; suit < (int)Suit.Spreads; suit++)
+            // initialize the random object
+            this._random = new Random();
+
+            // load the list with cards
+            for (int suit = 0; suit <= (int)Suit.Spades; suit++)
             {
-                for (int faces = 0; faces < (int )Faces.King; faces++)
+                for (int face = 1; face <= (int)Face.King; face++)
                 {
-                    this.Add(new Card((Faces)faces, (Suit)suit));
+                    this.Add(new Card((Face)face, (Suit)suit));
                 }
             }
-
-            
         }
+
+        // PUBLIC METHODS
+
+        /// <summary>
+        /// This method overrides the built-in ToString method and outputs the current contents
+        /// of the deck.
+        /// </summary>
         public override string ToString()
         {
-            string outputstring = "";
+            string outputString = "";
+
             foreach (Card card in this)
             {
-                outputstring += " The" + card.Faces + "of" + card.Suit+"\n";
+                outputString += "The " + card.Face + " of " + card.Suit + "\n";
             }
-            return outputstring;
+
+            return outputString;
         }
-    }
+
+        /// <summary>
+        /// This method shuffles the deck
+        /// </summary>
+        public void Shuffle()
+        {
+            int firstCard;
+            int secondCard;
+            Card tempCard;
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                firstCard = this.Random.Next(0, 52);
+                secondCard = this.Random.Next(0, 52);
+                tempCard = (Card)this[secondCard].Clone();
+                this[secondCard].Face = this[firstCard].Face;
+                this[secondCard].Suit = this[firstCard].Suit;
+                this[firstCard].Face = tempCard.Face;
+                this[firstCard].Suit = tempCard.Suit;
+            }
+        }
+        public Card Deal1()
+         {
+             Card firstCard = (Card)this[0].Clone();
+             this.RemoveAt(0); // removes the top card
+ 
+             Console.WriteLine("Deck Contains: " + this.Count + " Cards");
+             return firstCard;
+        }
+
+}
+
 }
