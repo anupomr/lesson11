@@ -7,7 +7,7 @@ using System.Threading.Tasks;
  * Name: Anupom Roy
  * Date: July 25, 2017
  * Description: Demo for Lesson 11
- * Version: 0.4 - Deal5 method Implemented
+ * Version: 0.5 - HighestCards implemented in driver class
  */
 namespace lesson11
 {
@@ -35,7 +35,8 @@ namespace lesson11
             // hand = deck.Deal5(); // creates a new Hand object and assigns it to hand
             // deal one card from the top of the deck
             hand = deck.Deal5();
-                       
+            hand.HighestCards(hand);
+
         }
 
     }
