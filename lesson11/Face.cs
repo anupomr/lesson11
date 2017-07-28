@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 /*
 Name: Anupom
-date: july 25
+Date: july 25
  Description: Enumeration for Face
  * Version: 0.1 - Created the Face Enum
  */

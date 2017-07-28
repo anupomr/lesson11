@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /*
- * Name: Tom Tsiliopoulos
+ * Name: Anupom Roy
  * Date: July 25, 2017
  * Description: Demo for Lesson 11
- * Version: 0.1 - Created the Program class
+ * Version: 0.4 - Updated the Program class to include comments for Lab 25
  */
 namespace lesson11
 {
@@ -24,7 +24,7 @@ namespace lesson11
             Console.WriteLine(deck.ToString());
             Console.WriteLine();
 
-            
+
             hand.Add(deck.Deal1()); // deal one card from the top of the deck
             Console.WriteLine(hand.ToString());
             Console.WriteLine();
@@ -33,8 +33,8 @@ namespace lesson11
 
 
             // hand = deck.Deal5(); // creates a new Hand object and assigns it to hand
-            hand.Add(deck.Deal1()); // deal one card from the top of the deck
-            Console.WriteLine(hand.ToString());
+            // deal one card from the top of the deck
         }
+
     }
 }

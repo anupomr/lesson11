@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+/*
+Name: Anupom
+Date: july 25
+* Description: This is the Card class to be used in the
+ * card shuffling and dealing simulation
+ * Version: 0.2 - Added Clone method
+ */
 namespace lesson11
 {
     public class Card

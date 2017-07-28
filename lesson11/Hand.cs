@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+/*
+   Name: Anupom
+ * Date: July 27, 2017
+ * Description: This is the Hand class
+ * It inherits from the CardList class
+ * Version: 0.4 - Fixed a bug - non-implemented _initialize method
+ */
 namespace lesson11
 {
     public class Hand : CardList
@@ -41,6 +47,7 @@ namespace lesson11
 
             return outputString;
         }
+   
 
     }
 }

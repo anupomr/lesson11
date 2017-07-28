@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 /*
-Name: Anupom
-date: july 25
- Description: 
- * Version: 0.1 - Created the Deck class
+Name: Anupom Roy
+Date: July 25
+Description: This is the Deck class.
+ It inherits from the CardList class
+Version: 0.5 - Added Deal1 method
  */
 namespace lesson11
 {
@@ -32,10 +33,10 @@ namespace lesson11
         /// <summary>
         /// This is the main constructor for the Deck class.
         /// </summary>
-        public Deck()
+        /*public Deck()
         {
             this._initialize();
-        }
+        }*/
 
         // PRIVATE METHODS
 
@@ -98,13 +99,15 @@ namespace lesson11
         }
         public Card Deal1()
          {
+
              Card firstCard = (Card)this[0].Clone();
              this.RemoveAt(0); // removes the top card
  
-             Console.WriteLine("Deck Contains: " + this.Count + " Cards");
+            Console.WriteLine("Deck Contains: " + this.Count + " Cards");
              return firstCard;
         }
-
-}
+    
+        
+    }
 
 }
