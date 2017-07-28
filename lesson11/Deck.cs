@@ -7,7 +7,7 @@ Name: Anupom Roy
 Date: July 25
 Description: This is the Deck class.
  It inherits from the CardList class
-Version: 0.5 - Added Deal1 method
+Version: 0.5 - Added Deal5 method
  */
 namespace lesson11
 {
@@ -97,7 +97,7 @@ namespace lesson11
                 this[firstCard].Suit = tempCard.Suit;
             }
         }
-        public Card Deal1()
+        /*public Card Deal1()
          {
 
              Card firstCard = (Card)this[0].Clone();
@@ -105,9 +105,22 @@ namespace lesson11
  
             Console.WriteLine("Deck Contains: " + this.Count + " Cards");
              return firstCard;
+        }*/
+        public Hand Deal5()
+        {
+            Hand hand = new Hand();
+            for (int i = 0; i < 5; i++)
+            {
+                hand.Add((Card)this[0].Clone());
+                this.RemoveAt(0);
+            }
+
+            Console.WriteLine(hand.ToString());
+            Console.WriteLine("Deck Contains: " + this.Count + " Cards");
+            return hand;
         }
-    
-        
+
+
     }
 
 }
